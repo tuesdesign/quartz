@@ -6,7 +6,7 @@ tags:
   - blog
 ---
 
- .
+ 
 > [!NOTE] INFORMATION and LICENCE
 >Tues Design Co. 'CARD' Business Card / Bluetooth Game Controller
 >
@@ -14,19 +14,21 @@ tags:
 >
 >Designed By Constantine Lucius Pallas (2024-2025)
 >
->TUES DESIGN CARD' HARDWARE SCHEMATICS, PRODUCTION FILES, FIRMWARE CONFIGURATION, DOCUMENTATION and RELATED MATERIALS are provided AS IS under the [CERN OHL v2 Strongly Reciprocal](https://choosealicense.com/licenses/cern-ohl-s-2.0/) license.
+>TUES DESIGN CARD HARDWARE SCHEMATICS, PRODUCTION FILES, FIRMWARE CONFIGURATION, DOCUMENTATION and RELATED MATERIALS are provided AS IS under the [CERN OHL v2 Strongly Reciprocal](https://choosealicense.com/licenses/cern-ohl-s-2.0/) license.
 
 
 # BUILD GUIDE
 
-Hi there. I'm Constantine, and if you're reading this page, you likely acquired one of my business cards, and you're interested in turning it into a game controller. This document should give you everything you need to complete your build.
+Hi there. I'm Constantine, and if you're reading this page, you likely acquired one of my business cards, and you're interested in turning it into a game controller. This document should give you everything you need to complete your build. 
 
 ## Parts List
 - 1x TUES DESIGN CARD mainboard (the business card)
 - 11x Kailh Choc Mechanical Keyboard Switches (Not Cherry MX switches)
-- 11x Kailh Choc Hot-Swap Sockets
-- 11x Square Choc Keycaps (16.5x16.5mm) - I used [these](https://chosfox.com/collections/choc-keycaps/products/chocfox-cfx-choc-keycaps)
+- 11x Kailh Choc Hot-Swap Sockets (Not Cherry MX sockets)
+- 11x Square Choc Keycaps (16.5x16.5mm) - I used [these](https://chosfox.com/collections/choc-keycaps/products/chocfox-cfx-choc-keycaps) (Not Cherry MX keycaps)
 - 1x [Seeed Studio XIAO nRF52840 Sense](https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html) (you may be able to use a different microcontroller with the same pinout and footprint, but I cannot guarantee compatibility)
+	- The standard Seeed Studio XIAO nRF52840 has the same pinout, footprint, and even bluetooth features, so it's probably the next best thing (I haven't tried it myself though).
+	- If you have had success with an alternate microcontroller, please email me and I'll amend the list. 
 - (Optional, advanced) 1x [Compatible Battery](https://forum.seeedstudio.com/t/battery-guidance-for-the-nrf52840-sense/273224) and connectors - This is required for Bluetooth support and wireless capabilities.
 ## Required Tools and Materials
 - Soldering Iron (I recommend using a small tip)
@@ -37,9 +39,9 @@ Hi there. I'm Constantine, and if you're reading this page, you likely acquired 
 ## Step 1: Soldering
 First, Solder the XIAO Microcontroller to the designated place on the back of the mainboard. An outline is provided for easy alignment. 
 
-If you are planning on adding a battery, ensure that the BAT+ and BAT- pads on the XIAO are soldered to the mainboard before proceeding to solder the side pads. Be very careful not to short these pads, as doing so could be a fire risk.
+If you are planning on adding a battery, ensure that the BAT+ and BAT- pads on the XIAO are soldered to the mainboard before proceeding to solder the side pads. Be very careful not to short these pads, as doing so could be a fire risk. If you have a V1 version of the card (Indicated by 3 rectangular copper pads next to the L2 button on the back of the board), it can be somewhat challenging to get good contact between the battery pads on the XIAO and the pads on the board.
 
-Soldering the side pads is quite simple. The ENIG finish on the mainboard and the castellated pads on the XIAO ensures plenty of solder paste can adhere the surfaces.  
+Soldering the side pads is quite simple. The ENIG finish on the mainboard and the castellated pads on the XIAO ensures plenty of solder paste can adhere the surfaces. You can use [male header pins](https://ca.robotshop.com/products/7-pin-male-header-seeed-studio-xiao-series-board-5x) to make the process even easier, but you may have to clip the ends to fit the board in the case.    
 
 Next, Solder the 11 Hot-Swap Sockets must be soldered to the board. Four are affixed to the front (for the back buttons) and seven are affixed to the back (for the front buttons).  There is an outline printed on the correct side of the board to align each socket. 
 These renders illustrate how each part should be affixed.
@@ -52,6 +54,8 @@ Front:
 If you are unsure if you soldered everything correctly, you can insert the switches (taking note of the rotation of each switch), skip ahead to Step 3, and return to this step after verifying the  
 
 First, print a case. My good friend [Daniel Fiuk](https://danielfiuk.ca/) created [a simple case designed for wired use.](https://www.thingiverse.com/thing:6990201) If you'd like to use wireless, You will likely also require an interior volume for the battery. As the controller is not designed for use with a specific battery, I would suggest using Blender to modify this design to add space for yours. You can also create your own design, making use of the STEP files available on the PCB GitHub page.
+
+A revised official case is in the works. The new case will have improved ergonomics, support for a battery pack, and greater strength. This guide will be updated with a link to download the free, open source 3D print files for the new case when it is ready. You should have no problems esily switching cases.
 
 ![[pxl-20250312-143010845-67e69ca9a2e99.webp]]
 When 3D printing this case using an FDM printer, I would suggest aligning each 'flat' side to the build plate (the outside of the top half and the inside of the back half). 
@@ -66,4 +70,4 @@ Now that you've built your controller, you're ready to start using it with games
 Now that the firmware has been flashed, the buttons should be mapped to their default keys. This might not be ideal for your application (perhaps the game you're playing doesn't have remappable controls, or you would like to use chording/layers to add additional functionality). You can easily remap the hardware using [ZMK Studio](https://zmk.studio/) (the bottom right key on the back is set to 'unlock' this program by default).
 
 ## Notes
-Thanks for reading! If you have any questions feel free to reach out to constantine@tues.design. I plan to update this page with a video build guide and additional resources. 
+Thanks for reading! If you have any questions feel free to reach out to constantine@tues.design. I plan to update this page with a video build guide and additional resources.

@@ -7,7 +7,7 @@ Hello, Welcome to my website! My name is **Constantine Lucius Pallas**.
 
 # Featured Projects
 
-![[cardThumbnail-01.png|315]](TUES%20DESIGN%20CARD)
+[![[cardThumbnail-01.png|315]]](TUES%20DESIGN%20CARD.md)
 [![[StarlightThumbnail.png]]](Starlight) 
 [![[BlackstoneThumbnail.png]]](Blackstone)
 [![[OffworldWeatherThumbnail.png]]](OffworldWeather)
